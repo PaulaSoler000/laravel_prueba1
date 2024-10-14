@@ -13,6 +13,8 @@
         @method('PUT')
         @csrf
         <input type="text" name="name" value="{{$product->name}}">
+        <input type="text" name="description" value="{{$product->description}}">
+        <input type="text" name="price" value="{{$product->price}}">
         <input type="submit" value="update">
     </form>
 </body>

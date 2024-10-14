@@ -10,13 +10,18 @@
 
     <form method="POST" action="{{route('products.store')}}">
         @csrf
-        <input type="text" name="name">
+        <input type="text" name="name" value="nombre">
+        <input type="text" name="description" value="description">
+        <input type="text" name="price" value="price">
         <input type="submit" value="create">
 
     </form>
     <ul>
         @foreach ($products as $product)
-            <li>{{$product->name}} 
+            <li>
+            {{$product->name}}
+            {{$product->description}}
+            {{$product->price}} 
                 <form action="{{route('products.destroy', $product->id)}}" method="POST">
                     @method('DELETE')
                     @csrf
