@@ -8,13 +8,19 @@
 </head>
 
 <body>
-    <h1>Edit product: {{$product->name}}</h1>
-    <form action="{{route('products.update', $product->id)}}" method="POST">
+    <h1>Edit product: {{ $product->name }}</h1>
+    <form action="{{ route('products.update', $product->id) }}" method="POST">
         @method('PUT')
         @csrf
-        <input type="text" name="name" value="{{$product->name}}">
-        <input type="text" name="description" value="{{$product->description}}">
-        <input type="text" name="price" value="{{$product->price}}">
+        <label for="">Nombre: </label>
+        <input type="text" name="name" value="{{ $product->name }}"><br>
+
+        <label for="">Descripcion: </label>
+        <input type="text" name="description" value="{{ $product->description }}"><br>
+
+        <label for="">Precio: </label>
+        <input type="text" name="price" value="{{ $product->price }}"><br>
+
         <input type="submit" value="update">
     </form>
 </body>
