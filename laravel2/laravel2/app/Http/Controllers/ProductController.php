@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Product;
+use App\Http\Requests\CreateProductRequest;
 
 class ProductController extends Controller
 {
@@ -18,7 +19,7 @@ class ProductController extends Controller
         return view('products-create');
     }
 
-    public function store(Request $request)
+    public function store(CreateProductRequest $request)
     {
         Product::create($request->all());
         return redirect()->route('products.index');
@@ -43,7 +44,7 @@ class ProductController extends Controller
 
     }
 
-    public function update(Request $request, $id)
+    public function update(CreateProductRequest $request, $id)
     {
         $product = Product::find($id);
         $product->name = $request->name;
