@@ -10,8 +10,8 @@ class ProductController extends Controller
 {
     public function index()
     {
-        $products = Product::all(Auth::user()->id);
-        return view('dashboard', compact('products'));
+       
+        return view('dashboard');
     }
 
     public function store(Request $request)
