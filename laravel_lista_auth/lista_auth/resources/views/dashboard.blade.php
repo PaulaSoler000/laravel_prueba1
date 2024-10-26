@@ -26,11 +26,9 @@
 
                 <div>
                     <ul>
-                        @forelse (Auth::user()->products as $product)
+                        @foreach (Auth::user()->products as $product)
                             <li>{{ $product->name }}</li>
-                        @empty
-                            <li>No products</li>
-                        @endforelse
+                        @endforeach
                     </ul>
                 </div>
             </div>
